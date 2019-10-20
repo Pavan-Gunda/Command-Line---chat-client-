@@ -13,7 +13,7 @@ host = str(args[0])
 port = int(args[1])
 s.bind((host, port))
 s.listen(100)
-client_list=[  # creates an array of list of clients to save them
+client_list=[]  # creates an array of list of clients to save them
 client_list.append(s)
 temp_client_list=[]  # creates a array of temporary list which will be proceeded to permanent list if no errors of input
 permanent_client_list=[]  # creates a array of permanent list
