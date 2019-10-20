@@ -24,7 +24,7 @@ def broadcast(msg,conn):
         if sock!= conn:
             print('broadcasting')
             try:
-                sock.sendall(msg.encode('utf_8'))
+                sock.sendall(msg.encode('utf-8'))
             except:
                 sock.close()
                 permanent_client_list.remove(sock)
@@ -37,26 +37,26 @@ def main():
         for sock in readsock:
             if sock==s:
                 newsock,addr=s.accept()
-                newsock.sendall('Hello 1'.encode('utf_8'))
+                newsock.sendall('Hello 1'.encode('utf-8'))
                 client_list.append(newsock)
                 temp_client_list.append(newsock)
             elif sock in temp_client_list:
                 try:
-                    nick=sock.recv(1024).decode('utf_8')
+                    nick=sock.recv(1024).decode('utf-8')
                     if nick:
                         found=re.search(r'NICK\s(\S*)',nick)
                         name=str(found.group(1))
                         if len(name)>12:
-                            sock.sendall('Error : nicknames are limited to 12 characters '.encode('utf_8'))
+                            sock.sendall('Error : nicknames are limited to 12 characters '.encode('utf-8'))
                         elif re.search(r'!',name) or re.search(r'@',name) or re.search(r'#',name) or re.search(r'\$',name) or re.search(r'%',name) or re.search(r'\*',name) or re.search(r'\^',name):
-                            sock.sendall('Error don\'t use special characters in your nick names'.encode('utf_8'))
+                            sock.sendall('Error don\'t use special characters in your nick names'.encode('utf-8'))
                         elif found:
-                            sock.sendall(('Welcome to chat '+str(name)).encode('utf_8'))
+                            sock.sendall(('Welcome to chat '+str(name)).encode('utf-8'))
                             permanent_client_list.append(sock)
                             permanent_client_list_dictionary[sock]=name
                             temp_client_list.remove(sock)
                         else:
-                            sock.sendall('Error -> BAD COMMAND ACTUAL COMMAND PROTOCOL NICK <nick>'.encode('utf_8'))
+                            sock.sendall('Error -> BAD COMMAND ACTUAL COMMAND PROTOCOL NICK <nick>'.encode('utf-8'))
                     else:
                         sock.close()
                         client_list.remove(sock)
@@ -65,16 +65,16 @@ def main():
                     continue
             elif sock in permanent_client_list:
                 try:
-                    msg=sock.recv(1024).decode('utf_8')
+                    msg=sock.recv(1024).decode('utf-8')
                     if msg:
                         found=re.search(r'MSG\s',msg)
                         if len(msg)>259:
-                            sock.sendall('Error message length should not exceed 256 characters'.encode('utf_8'))
+                            sock.sendall('Error message length should not exceed 256 characters'.encode('utf-8'))
                         elif found:
                             msg_to_send='MSG '+str(permanent_client_list_dictionary[sock])+': '+msg[4:]
                             broadcast(msg_to_send,sock)
                         else:
-                            sock.sendall('Error BAD COMMAND ACTUAL COMMAND MSG <msg>'.encode('utf_8'))
+                            sock.sendall('Error BAD COMMAND ACTUAL COMMAND MSG <msg>'.encode('utf-8'))
                     else:
                         sock.close()
                         client_list.remove(sock)
