@@ -31,7 +31,7 @@ def broadcast(msg,conn):
                 del permanent_client_list_dictionary[sock]
                 client_list.remove(sock)
 def main():
-    print('HI, this server is running and clients can now chat on this server')
+    print('HI, server started running on 'args' ')
     while True:
         readsock,writesock,errorsock=select.select(client_list,[],[])
         for sock in readsock:
