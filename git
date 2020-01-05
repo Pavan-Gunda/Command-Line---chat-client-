@@ -1,0 +1,35 @@
+commit 338296e676ce34ef36429c921699ff70da3152b6
+Author: pavan gunda <pavangunda66@gmail.com>
+Date:   Sat Jan 4 21:35:42 2020 +0100
+
+    chatclient and server are renamed
+
+commit 2ebc88734c1dc399048fddb0191bca4d9f9e0f31
+Author: pavan gunda <pavangunda66@gmail.com>
+Date:   Sun Oct 20 19:42:35 2019 +0200
+
+    renamed in master
+
+commit df37f1ef70db1aee61b6c8eebb1b5668f8f997cc
+Author: pavan gunda <pavangunda66@gmail.com>
+Date:   Sun Oct 20 19:01:59 2019 +0200
+
+    all the had been done in branchone and pushed into master
+
+commit 0eca55286c5a5074e1a752df8b4721ecc07b9041
+Author: pavan gunda <pavangunda66@gmail.com>
+Date:   Sun Oct 20 11:01:13 2019 +0200
+
+    It had an error : it could not encode into utf_8 due to syntax issue ,modified it.
+
+commit ffbedc1f79851f5e172c6009fb03424184a90b13
+Author: pavan gunda <pavangunda66@gmail.com>
+Date:   Sun Oct 20 10:58:43 2019 +0200
+
+    first commit
+
+commit f1a3293b0a6f3a52cf13671e0562a4f041580676
+Author: ph4n666 <55189254+ph4n666@users.noreply.github.com>
+Date:   Fri Oct 18 13:40:35 2019 +0200
+
+    Initial commit
